@@ -1,0 +1,24 @@
+<!-- <p>home works!</p>
+<a routerLink="/detail/1" >Chi tiet1</a><br>
+<a routerLink="/detail/2" >Chi tiet 2</a><br>
+<a routerLink="/detail/3" >Chi tiet 3</a><br>
+<a routerLink="/detail/4" >Chi tiet 4</a><br> -->
+<div class="row">
+    <div class="col-12">
+        <a routerLink="/category/addcate" class="btn btn-success">Them moi</a>
+    </div>
+  
+    <div class="col-4 " *ngFor="let cate of categories">
+        <div>
+            <img [src]="cate.image" class="img-thumbnail" width="150">
+        </div>
+        <h5>
+            <a href="#" title="">{{cate.name}}</a>
+        </h5>
+        <div>
+            <a routerLink="category/editcate/{{cate.id}}" class="btn btn-info">Sua</a>&nbsp;
+            
+            <button type="button" class="btn btn-danger" (click) = "removeCategory(cate)">Xoa</button>
+        </div>
+    </div>
+</div>
