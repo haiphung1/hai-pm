@@ -1,10 +1,10 @@
 <div class="row">
         <div class="col-6 offset-sm-3">
             <div class="text-center">
-                <h3>Tạo mới danh mục</h3>
+                <h3>Thêm dữ liệu</h3>
             </div>
             <div class="form-group">
-                <label for="">Tên danh mục</label>
+                <label for="">Tên khách sạn</label>
                 <input type="text" 
                         (keyup)="category.name = $event.target.value"
                         value="{{category.name}}" 
@@ -12,16 +12,44 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <img src="https://x.kinja-static.com/assets/images/logos/placeholders/default.png" *ngIf="category.image == ''" class="img-fluid">
+                    <img src="https://x.kinja-static.com/assets/images/logos/placeholders/default.png" *ngIf="category.image == ''" class="img-fluid" width="150">
                     <img [src]="category.image" *ngIf="category.image != ''" class="img-fluid">
                 </div>
             </div>
             <div class="form-group">
-                <label for="">Ảnh danh mục</label>
-                <input type="text" 
-                        (keyup)="category.image = $event.target.value"	
-                        value="{{category.image}}" 
-                        class="form-control">
+                    <label for="">Ảnh </label>
+                    <input type="text" 
+                            (keyup)="category.image = $event.target.value"	
+                            value="{{category.image}}" 
+                            class="form-control">
+            </div>
+            <div class="form-group">
+                    <label for="">Địa chỉ</label>
+                    <input type="text" 
+                            (keyup)="category.address = $event.target.value"
+                            value="{{category.address}}" 
+                            class="form-control">
+            </div>
+            <div class="form-group">
+                    <label for="">Thành Phố</label>
+                    <input type="text" 
+                            (keyup)="category.city = $event.target.value"
+                            value="{{category.city}}" 
+                            class="form-control">
+            </div>
+          
+            <div class="row">
+                <div class="col-12">
+                    <img src="https://x.kinja-static.com/assets/images/logos/placeholders/default.png" *ngIf="category.image == ''" class="img-fluid" width="150">
+                    <img [src]="category.owner_image" *ngIf="category.owner_image != ''" class="img-fluid">
+                </div>
+            </div>
+            <div class="form-group">
+                    <label for="">Chủ sở hữu</label>
+                    <input type="text" 
+                            (keyup)="category.owner_image = $event.target.value"	
+                            value="{{category.owner_image}}" 
+                            class="form-control">
             </div>
             <div class="text-center">
                 <button type="button" 

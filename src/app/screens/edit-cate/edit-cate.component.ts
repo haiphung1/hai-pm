@@ -9,14 +9,17 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class EditCateComponent implements OnInit {
   category = {
     name:"",
-    image:""
+    image:"",
+    address:"",
+    owner_image:"",
+    city:""
   };
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private cateService: CategoryService
   ) { }
-  id="0";
+  id="";
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
     this.cateService.getListCategory()
@@ -29,7 +32,10 @@ export class EditCateComponent implements OnInit {
                     .subscribe(data=>{
                        this.category = {
                          name:"",
-                         image:""
+                         image:"",
+                         address:"",
+                         owner_image:"",
+                         city:""
                        }
                        this.router.navigate(['/']);
                     });

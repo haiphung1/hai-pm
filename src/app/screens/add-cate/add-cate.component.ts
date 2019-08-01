@@ -9,7 +9,10 @@ import {Route, Router} from '@angular/router';
 export class AddCateComponent implements OnInit {
   category = {
     name: "",
-  	image: ""
+    image: "",
+    address:"",
+    owner_image:"",
+    city:""
   };
   constructor(private cateService: CategoryService, private router: Router) { }
 
@@ -21,7 +24,10 @@ export class AddCateComponent implements OnInit {
                       console.log(data);
                        this.category = {
                          name:"",
-                         image:""
+                         image:"",
+                         address:"",
+                         owner_image:"",
+                         city:""
                        }
                        this.router.navigate(['/']);
                     });

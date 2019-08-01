@@ -5,20 +5,32 @@
 <a routerLink="/detail/4" >Chi tiet 4</a><br> -->
 <div class="row">
     <div class="col-12">
-        <a routerLink="/category/addcate" class="btn btn-success">Them moi</a>
+        <a routerLink="/category/add" class="btn btn-success">Thêm mới dữ liệu</a>
     </div>
-  
-    <div class="col-4 " *ngFor="let cate of categories">
-        <div>
-            <img [src]="cate.image" class="img-thumbnail" width="150">
-        </div>
-        <h5>
-            <a href="#" title="">{{cate.name}}</a>
-        </h5>
-        <div>
-            <a routerLink="category/editcate/{{cate.id}}" class="btn btn-info">Sua</a>&nbsp;
-            
-            <button type="button" class="btn btn-danger" (click) = "removeCategory(cate)">Xoa</button>
+</div>
+
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-4" *ngFor="let cate of categories">
+                <div class="card" style="width: 16rem;">
+                    <img class="card-img-top" [src]="cate.image" width="150">
+                    <h6>Chủ sở hữu</h6>
+                    <img class="card-img-top" [src]="cate.owner_image" class="img-thumbnail" width="100">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Khách sạn: {{cate.name}}</h5>
+                        <p class="card-text">Địa chỉ: {{cate.address}}</p>
+                        <p>Thành phố: {{cate.city}}</p>
+                        <div>
+                            <a routerLink="category/edit/{{cate.id}}" class="btn btn-info">Sửa</a>&nbsp;
+                                
+                            <button type="button" class="btn btn-danger" (click) = "removeCategory(cate)">Xóa</button>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
+
+
