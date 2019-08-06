@@ -5,6 +5,7 @@ import {HomeComponent} from './screens/home/home.component';
 import {DetailCateComponent} from './screens/detail-cate/detail-cate.component';
 import {AddCateComponent} from './screens/add-cate/add-cate.component';
 import {EditCateComponent} from './screens/edit-cate/edit-cate.component';
+
 const routes: Routes = [
   {
     path: "",

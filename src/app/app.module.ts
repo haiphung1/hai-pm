@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { DetailCateComponent } from './screens/detail-cate/detail-cate.component
 import { AddCateComponent } from './screens/add-cate/add-cate.component';
 import { EditCateComponent } from './screens/edit-cate/edit-cate.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +19,14 @@ import { EditCateComponent } from './screens/edit-cate/edit-cate.component';
     HomeComponent,
     DetailCateComponent,
     AddCateComponent,
-    EditCateComponent
+    EditCateComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
