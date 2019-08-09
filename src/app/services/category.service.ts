@@ -10,7 +10,7 @@ export class CategoryService {
   constructor(private http: HttpClient) { }
 
   public getListCategory(){
-  	return this.http.get<any[]>(this.apiUrl);
+  	return this.http.get<any[]>(this.apiUrl); 
   }
   public  removeCategory(cateId) {
     let removeUrl= `${this.apiUrl}/${cateId}`;
@@ -29,7 +29,7 @@ export class CategoryService {
   //  return this.http.get<any>(`${this.apiUrl}/${cateId}`); 
   // }
 
-  public getCategoryById(cateId){
+  public getCategoryById(cateId){ 
     return this.http.get<any>(`${this.apiUrl}/${cateId}`);
   }
   public editCategory(cateId, data){

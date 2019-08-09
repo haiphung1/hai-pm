@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-6 offset-sm-3">
+        <div class="text-center">
+            <h3>Sửa sản phẩm</h3>
+        </div>
+
+        <form [formGroup]="proForm">
+            
+                <div class="form-group">
+                    <label for="">Danh Mục</label>
+
+                    <input type="text"   formControlName="cate_id"  class="form-control" readonly="false">
+                    </div> 
+                <div class="form-group">
+                    <label for="">Tên sản phẩm</label>
+                    <input type="text" 
+                            formControlName="product_name" 
+                            class="form-control">
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <img src="https://x.kinja-static.com/assets/images/logos/placeholders/default.png" *ngIf="proForm.value.image == ''" class="img-fluid">
+                        <img [src]="proForm.value.image" *ngIf="proForm.value.image != ''" class="img-fluid">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Ảnh sản phẩm</label>
+                    <input type="text" 
+                            formControlName="image" 
+                            class="form-control">
+                </div>
+                <div class="form-group">
+                        <label for="">Giá sản phẩm</label>
+                        <input type="number" 
+                                formControlName="price" 
+                                class="form-control">
+                </div>
+                <div class="form-group">
+                        <label for="">Chi tiết sản phẩm</label>
+                        <textarea name="" id="" cols="20" rows="8" class="form-control"  formControlName="detail">
+                        
+                        </textarea>
+                </div>
+                <div class="form-group">
+                        <label for="">Số lượng</label>
+                        <input type="number" 
+                                formControlName="amount" 
+                                class="form-control">
+                </div>
+                <div class="form-group">
+                        <label for="">Trạng thái</label>
+                        <input type="number" 
+                                formControlName="status" 
+                                class="form-control">
+                </div>
+                <div class="text-center">
+                    <button type="button" 
+                            (click)="saveEditProducts()"
+                            class="btn btn-sm btn-success">Lưu</button>
+                    <a routerLink="/productcate/{{cate_id}}" class="btn btn-sm btn-danger">Hủy</a>
+                </div>
+    </form>
+    </div>
+</div>
+<div>
+    <div>
+        <!-- {{pro.product_name.value | json}}
+        {{pro.cate_id.value | json}}
+        {{pro.image.value | json}}
+        {{pro.price.value | json}}
+        {{pro.detail.value | json}}
+        {{pro.amount.value | json}}
+        {{pro.status.value | json}} -->
+    </div>
+</div>
+

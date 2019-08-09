@@ -10,6 +10,10 @@ import { HomeComponent } from './screens/home/home.component';
 import { DetailCateComponent } from './screens/detail-cate/detail-cate.component';
 import { AddCateComponent } from './screens/add-cate/add-cate.component';
 import { EditCateComponent } from './screens/edit-cate/edit-cate.component';
+import { ProductComponent } from './screens/product/product.component';
+import { ProductAddComponent } from './screens/product-add/product-add.component';
+import { ProductEditComponent } from './screens/product-edit/product-edit.component';
+
 
 
 @NgModule({
@@ -20,6 +24,10 @@ import { EditCateComponent } from './screens/edit-cate/edit-cate.component';
     DetailCateComponent,
     AddCateComponent,
     EditCateComponent,
+    ProductComponent,
+    ProductAddComponent,
+    ProductEditComponent,
+ 
     
   ],
   imports: [

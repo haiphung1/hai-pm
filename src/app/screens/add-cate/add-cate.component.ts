@@ -20,7 +20,7 @@ ngOnInit() {
 saveCategory(){
 let sendData = {
 name: this.category.name.value,
-image: this.category.image.value
+image: this.category.image.value 
 }
 
 this.cateService.addCategory(sendData)

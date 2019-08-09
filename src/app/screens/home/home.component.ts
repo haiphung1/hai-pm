@@ -7,7 +7,7 @@ import {CategoryService} from '../../services/category.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private cateService: CategoryService) { }
+  constructor(private cateService: CategoryService) { } 
   categories = [];
   ngOnInit() {
     this.cateService.getListCategory()
@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     if(conf){
       this.cateService.removeCategory(cate.id)
       .subscribe(data=>{
-        this.categories = this.categories.filter(item=>item.id != cate.id);
+        this.categories = this.categories.filter(item=>item.id != cate.id); 
       })
     }
   

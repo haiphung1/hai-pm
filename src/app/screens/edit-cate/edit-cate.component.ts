@@ -15,12 +15,12 @@ export class EditCateComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private cateService: CategoryService
+    private cateService: CategoryService 
   ) { }
  
   cateForm = new FormGroup({
   	name: new FormControl(''),
-	image: new FormControl('')
+	  image: new FormControl('')
   });
   cateId: string;
   ngOnInit() {
@@ -35,7 +35,7 @@ export class EditCateComponent implements OnInit {
   						this.cateForm.setValue({
   							name: data.name,
   							image: data.image
-  						});
+  						}); 
   					});
   }
   saveCategory(){

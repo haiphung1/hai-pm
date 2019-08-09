@@ -5,7 +5,9 @@ import {HomeComponent} from './screens/home/home.component';
 import {DetailCateComponent} from './screens/detail-cate/detail-cate.component';
 import {AddCateComponent} from './screens/add-cate/add-cate.component';
 import {EditCateComponent} from './screens/edit-cate/edit-cate.component';
-
+import {ProductComponent} from './screens/product/product.component';
+import {ProductAddComponent} from './screens/product-add/product-add.component';
+import {ProductEditComponent} from './screens/product-edit/product-edit.component';
 const routes: Routes = [
   {
     path: "",
@@ -20,8 +22,20 @@ const routes: Routes = [
     component: AddCateComponent
   },
   {
+    path: "productcate/:id",
+    component: ProductComponent
+  },
+  {
     path: "category/editcate/:id",
     component: EditCateComponent
+  },
+  {
+    path: "addproduct/:id",
+    component: ProductAddComponent
+  },
+  {
+    path:"productcate/:cateid/editproduct/:id",
+    component: ProductEditComponent
   }
 ];
 
