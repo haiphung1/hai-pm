@@ -19,9 +19,18 @@ export class EditCateComponent implements OnInit {
   ) { }
  
   cateForm = new FormGroup({
-  	name: new FormControl(''),
-	  image: new FormControl('')
+  	name: new FormControl('', [ 
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(20),
+    ]),
+	  image: new FormControl('',[
+      Validators.required,
+    ])
   });
+
+  get name() {return this.cateForm.get('name')}
+  get image() {return this.cateForm.get('image')}
   cateId: string;
   ngOnInit() {
     // this.id = this.route.snapshot.params.id;
@@ -48,10 +57,13 @@ export class EditCateComponent implements OnInit {
   //                      this.router.navigate(['/']);
   //                   });
   // }
-  this.cateService.editCategory(this.cateId, this.cateForm.value)
-  					.subscribe(data => {
-  						console.log(data);
-  						this.router.navigate(['/']);
-  					})
+  if(this.cateForm.valid){
+    this.cateService.editCategory(this.cateId, this.cateForm.value)
+            .subscribe(data => {
+              console.log(data);
+              this.router.navigate(['/']);
+            })
+  }
+ 
   }
 }

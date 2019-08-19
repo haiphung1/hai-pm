@@ -28,6 +28,7 @@
       <tr class="table-primary">
         <th scope="col"># ID</th>
         <th scope="col">Tên Danh Mục</th>
+        <th scope="col">Ảnh</th>
         <th scope="col">Hành động</th>
       </tr>
     </thead>
@@ -35,6 +36,7 @@
       <tr *ngFor="let cate of categories">
         <th scope="row">{{cate.id}}</th>
         <td><a routerLink="/productcate/{{cate.id}}" title="">{{cate.name}}</a></td>
+        <td><img [src]="cate.image" class="img-thumbnail" width="150"></td>
         <td>
             <a routerLink="category/editcate/{{cate.id}}" class="btn btn-info">Sửa</a>&nbsp;
             

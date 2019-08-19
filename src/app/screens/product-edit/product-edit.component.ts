@@ -16,13 +16,38 @@ export class ProductEditComponent implements OnInit {
   ) { }
     proForm = new FormGroup({
       cate_id: new FormControl(''),
-      product_name: new FormControl(''),
-      image: new FormControl(''),
-      price: new FormControl(''),
-      detail: new FormControl(''),
-      amount: new FormControl(''),
-      status: new FormControl('') 
+      product_name: new FormControl('',[
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(20),
+      ]),
+      image: new FormControl('',[
+        Validators.required,
+        Validators.pattern('^.+\.(jpg|gif|png|svg)+$'),
+      ]),
+      price: new FormControl('',[
+        Validators.required,
+        Validators.min(1),
+      ]),
+      detail: new FormControl('',[
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(100),
+      ]),
+      amount: new FormControl('',[
+        Validators.required,
+        Validators.min(1),
+      ]),
+      status: new FormControl('',[
+        Validators.required,
+      ]),
     });
+    get name() {return this.proForm.get('product_name')}
+    get image() {return this.proForm.get('image')}
+    get price() {return this.proForm.get('price')}
+    get detail() {return this.proForm.get('detail')}
+    get amount() {return this.proForm.get('amount')}
+    get status() {return this.proForm.get('status')}
     cate_id =0;
     proId: string;
   ngOnInit() {

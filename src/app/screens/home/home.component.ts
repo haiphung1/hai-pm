@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
                     })
   }
   removeCategory(cate){
-    let conf = confirm('Ban co chac chan muon xoa danh muc nay ?')
+    let conf = confirm('Bạn có muốn xóa danh mục này')
     if(conf){
       this.cateService.removeCategory(cate.id)
       .subscribe(data=>{

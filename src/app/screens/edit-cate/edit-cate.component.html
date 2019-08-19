@@ -7,27 +7,49 @@
 		<form [formGroup]="cateForm">
 		
 			<div class="form-group">
-				<label for="">Tên danh mục</label>
+				<label for="">Tên danh mục</label><span class="text-danger">*</span>
 				<input type="text" 
 						formControlName="name"
 						class="form-control">
+				<br>
+					
+				<div *ngIf="name.invalid && (name.dirty || name.touched)"
+					  class="alert alert-danger">
+				  
+					<div *ngIf="name.errors.required">
+						Vui lòng điền tên danh mục
+					</div>
+					<div *ngIf="name.errors.minlength">
+						Tên danh mục không được ít hơn 4 kí tự
+					</div>
+					<div *ngIf="name.errors.maxlength">
+						Tên danh mục không được quá 20 kí tự
+					</div>
+				</div>
 			</div>
-			<!-- <div class="row">
+			<div class="row">
 				<div class="col-12">
 					<img src="https://x.kinja-static.com/assets/images/logos/placeholders/default.png" *ngIf="cateForm.value.image == ''" class="img-fluid">
 					<img [src]="cateForm.value.image" *ngIf="cateForm.value.image != ''" class="img-fluid">
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="">Ảnh danh mục</label>
+				<label for="">Ảnh danh mục</label><span class="text-danger">*</span>
 				<input type="text" 
 						formControlName="image" 
 						class="form-control">
-			</div> -->
+				<div *ngIf="image.invalid && (image.dirty || image.touched)"
+					  class="alert alert-danger">
+					<div *ngIf="image.errors.required">
+						Nhập đường link ảnh
+					</div>
+					
+				</div>
+			</div> 
 			<div class="text-center">
 				<button type="button" 
 						(click)="saveCategory()"
-						class="btn btn-sm btn-success">Lưu</button>
+						class="btn btn-sm btn-success" [disabled] = category.invalid>Lưu</button>
 				<a routerLink="/" class="btn btn-sm btn-danger">Hủy</a>
 			</div>
 		</form>

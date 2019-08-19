@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit {
     image:""
   };
   cateId: string;
- p=0;
+ 
   ngOnInit() {
     this.cateId = this.route.snapshot.params.id;
 
@@ -40,12 +40,13 @@ export class ProductComponent implements OnInit {
   }
 
   removeProduct(p){
+    console.log(p);
     let conf = confirm('Bạn chắc chắn muốn xóa sản phẩm này')
     if(conf){
-      this.productService.removeProduct(this.cateId, p)
+      this.productService.removeProduct(this.cateId,p)
       .subscribe(data=>{
-       
-        this.pros = this.pros.filter(item=>item.id != p.id); 
+        this.pros = this.pros.filter(item=>item.id != p); 
+        console.log(p.id);
       })
       
     }

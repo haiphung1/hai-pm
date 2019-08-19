@@ -33,10 +33,10 @@
             <div class="card">
                 <img class="card-img-top img-thumbnail" [src]="p.image" width="150">
                 <div class="card-body">
-                <h5 class="card-title">{{p.product_name}}</h5>
+                <h5 class="card-title">Tên sản phẩm: {{p.product_name}}</h5>
                 <p class="card-text text-danger">Giá : {{p.price}} VNĐ</p>
-                <p class="card-text"><small>{{p.detail}}</small></p>
-                <p class="card-text">Amount: {{p.amount}} &nbsp; Status: {{p.status}}</p>
+                <p class="card-text"><small>Chi tiết: {{p.detail}}</small></p>
+                <p class="card-text">Số lượng: {{p.amount}} &nbsp; <br> Trạng thái: {{p.status == 'true' ? 'Active' : 'Inactive'}}</p>
                 <a routerLink="editproduct/{{p.id}}" class="btn btn-danger btn-sm">Sửa</a>&nbsp; &nbsp;
                 <button type="button" class="btn btn-dark btn-sm" (click) = "removeProduct(p.id)">Xóa</button>
             </div>
